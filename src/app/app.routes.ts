@@ -27,6 +27,12 @@ export const routes: Routes = [
         loadChildren: ()=>
           import('./pages/pedido/pedido.routes').then((m) => m.PedidoRoutes)
       }
+      ,
+      {
+        path:'template',
+        loadChildren: ()=>
+          import('./pages/template/template.routes').then((m) => m.templateRoutes)
+      }
     ],
   },
   {

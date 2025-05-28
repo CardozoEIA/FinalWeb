@@ -1,0 +1,55 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-content>
+    <div class="d-flex">
+      <div class="m-r-auto m-b-8">
+        <mat-card-title>Template</mat-card-title>
+        <mat-card-subtitle>Listado</mat-card-subtitle>
+      </div>
+      <div>
+        <button mat-flat-button color="primary" class="m-r-8" (click)="goToCreateTemplate()">
+          Crear nuevo template
+        </button>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="w-100">
+        <thead>
+          <tr>
+            <th hidden>ID</th>
+            <th class="f-w-600 f-s-14">Campo A</th>
+            <th class="f-w-600 f-s-14">Campo B</th>
+            <th class="f-w-600 f-s-14">Fecha</th>
+            <th class="f-w-600 f-s-14">Estado</th>
+            <th class="f-w-600 f-s-14">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of templateList">
+            <td hidden>{{ item.id }}</td>
+            <td>{{ item.campoA }}</td>
+            <td>{{ item.campoB }}</td>
+            <td>{{ item.campoFecha | date: 'dd/MM/yyyy HH:mm' }}</td>
+            <td>{{ item.estado }}</td>
+            <td>
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menú acciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="goToEditTemplate(item)">
+                  <mat-icon>edit</mat-icon>
+                  <span>Editar</span>
+                </button>
+                <button mat-menu-item (click)="deleteTemplate(item)">
+                  <mat-icon>delete</mat-icon>
+                  <span>Eliminar</span>
+                </button>
+              </mat-menu>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
+

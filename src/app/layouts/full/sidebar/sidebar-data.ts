@@ -19,4 +19,9 @@ export const navItems: NavItem[] = [
     iconName: 'wheelchair-off',
     route: '/pedidos/listado',
   },
+  {
+    displayName: 'Template',
+    iconName: 'wheelchair-off',
+    route: '/template',
+  }
 ];

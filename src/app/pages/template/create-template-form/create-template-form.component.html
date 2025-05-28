@@ -1,0 +1,59 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <div class="header-container">
+      <mat-card-title class="m-b-0">
+        {{ editMode ? 'Edit Template' : 'Create Template' }}
+      </mat-card-title>
+      <button mat-flat-button color="primary" (click)="guardarTemplate()">Save</button>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content class="b-t-1">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-lg-6 m-b-16">
+          <mat-label class="f-w-600 m-b-8 d-block">Campo A</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput formControlName="campoA" placeholder="Enter Campo A" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6 m-b-16">
+          <mat-label class="f-w-600 m-b-8 d-block">Campo B</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput formControlName="campoB" placeholder="Enter Campo B" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6 m-b-16">
+          <mat-label class="f-w-600 m-b-8 d-block">Fecha</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput type="datetime-local" formControlName="campoFecha" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-6 m-b-16">
+          <mat-label class="f-w-600 m-b-8 d-block">Estado</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-select formControlName="estado">
+              <mat-option value="Activo">Activo</mat-option>
+              <mat-option value="Inactivo">Inactivo</mat-option>
+              <mat-option value="Pendiente">Pendiente</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 m-b-16">
+          <mat-label class="f-w-600 m-b-8 d-block">Descripción</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <textarea matInput rows="3" formControlName="descripcion" placeholder="Enter description"></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 m-b-16">
+          <mat-checkbox formControlName="isActive">Activo</mat-checkbox>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

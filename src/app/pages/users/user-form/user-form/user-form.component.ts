@@ -71,7 +71,7 @@ export class UserFormComponent {
     if(this.editMode && this.userId){
       this.userService.udpateUser(this.userId, userData).subscribe({
         next:(user:User)=>{
-          this.alertService.AlertaCuandoMelo("Excelente", "El usuario ha sido modificado correctamente").then((result) =>{
+          this.alertService.SuccesAlert("Excelente", "El usuario ha sido modificado correctamente").then((result) =>{
             if(result.isConfirmed)
               this.router.navigate(["/users"])
           });

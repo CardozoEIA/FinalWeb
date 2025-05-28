@@ -8,7 +8,7 @@ export class AlertService {
 
   constructor() { }
 
-  AlertaCuandoMelo(title:string, text: string){
+  SuccesAlert(title:string, text: string){
     return Swal.fire({
       icon:"success",
       title: title,
@@ -17,7 +17,7 @@ export class AlertService {
     });
   }
 
-  alertaConCorfirmacion(title:string, text: string){
+  ConfirmationAlert(title:string, text: string){
     return Swal.fire({
       icon:"warning",
       title:title,
@@ -25,6 +25,13 @@ export class AlertService {
       showCancelButton: true,
       confirmButtonText: "Aceptar",
       cancelButtonText:"Nonas"
+    })
+  }
+   ErrorAlert(title: string, text: string) {
+    return Swal.fire({
+      icon: "error",
+      title: title,
+      text: text
     })
   }
 }
